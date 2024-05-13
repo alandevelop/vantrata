@@ -1,0 +1,5 @@
+{
+  "http_addr": "0.0.0.0:8080",
+  "pg_url": "postgres://postgres:postgres@postgres:5432/restapi?sslmode=disable",
+  "log_level": ""
+}

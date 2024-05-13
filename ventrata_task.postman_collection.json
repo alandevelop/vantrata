@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "083351f1-e10f-45fd-9659-f3814ccbbd1a",
+		"name": "Ventrata_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6510853"
+	},
+	"item": [
+		{
+			"name": "product create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "product3",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base}}/products",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Capability",
+						"value": "price",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base}}/products",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product read",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Capability",
+						"value": "price",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base}}/products/:id",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "364d965c-ad1d-4450-a554-cbbaf536ffa3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "availability seed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productId",
+							"value": "364d965c-ad1d-4450-a554-cbbaf536ffa3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base}}/availability/seed",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"availability",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "availability read",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productId",
+							"value": "364d965c-ad1d-4450-a554-cbbaf536ffa3",
+							"type": "text"
+						},
+						{
+							"key": "localDate",
+							"value": "2024-05-13",
+							"type": "text"
+						},
+						{
+							"key": "localDateFrom",
+							"value": "2024-05-13",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "localDateTo",
+							"value": "2024-05-15",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base}}/availability",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookings create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Capability",
+						"value": "price",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productId",
+							"value": "364d965c-ad1d-4450-a554-cbbaf536ffa3",
+							"type": "text"
+						},
+						{
+							"key": "availabilityId",
+							"value": "4bbbc743-9e2e-4b73-8b44-dcfe53329b16",
+							"type": "text"
+						},
+						{
+							"key": "units",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base}}/bookings",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookings confirm",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Capability",
+						"value": "price",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base}}/bookings/:id/confirm",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"bookings",
+						":id",
+						"confirm"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "39677ece-10d9-11ef-8ba0-482ae34ec223"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking read",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Capability",
+						"value": "price",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base}}/bookings/:id",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"bookings",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "39677ece-10d9-11ef-8ba0-482ae34ec223"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
